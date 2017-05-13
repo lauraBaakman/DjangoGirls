@@ -4,8 +4,12 @@
 .AppleDouble
 .LSOverride
 
+# Database
+db.sqlite3
+
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
