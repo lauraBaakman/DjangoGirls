@@ -56,8 +56,7 @@ lint_python
 # lint_js
 # lint_css
 
-if $GLOBALPASS ; then
-	echo "succes"; 
-else
-	echo "failure";
+if ! $GLOBALPASS ; then
+	echo "Failure!";
+	exit 1;
 fi
