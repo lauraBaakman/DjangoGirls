@@ -10,11 +10,10 @@ install:
   - npm install -g csslint
   - sudo apt-get install tidy
 before_script:
-  - .CI/linters.sh
-  # - if find . -name "*.py" -exec pyflakes {} \; | grep ":"; then exit 1; fi
-  # - if find . -name "*.py" -exec pep8 {} \; | grep ":"; then exit 1; fi
-  # - if find . -name "*.js" -exec jshint {} \; | grep ":"; then exit 1; fi
-  # - if find . -name "*.css" -exec csslint {} \; | grep "problem"; then exit 1; fi
-  # - if find . -name "*.html" -exec tidy -q {} 2>&1 >/dev/null \; | grep -E 'Warning|Error'; then exit 1; fi
+  - if find . -name "*.py" -exec pyflakes {} \; | grep ":"; then exit 1; fi
+  - if find . -name "*.py" -exec pep8 {} \; | grep ":"; then exit 1; fi
+  - if find . -name "*.js" -exec jshint {} \; | grep ":"; then exit 1; fi
+  - if find . -name "*.css" -exec csslint {} \; | grep "problem"; then exit 1; fi
+  - if find . -name "*.html" -exec tidy -q {} 2>&1 >/dev/null \; | grep -E 'Warning|Error'; then exit 1; fi
 script: 
   pytest
