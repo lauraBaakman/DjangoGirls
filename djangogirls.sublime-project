@@ -1,15 +1,29 @@
 {
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"/Users/laura/.virtualenvs/djangogirls/bin/python\" -u \"$file\""
+		}
+	],
 	"folders":
 	[
 		{
 			"path": "./",
-			"file_exclude_patterns":
-			[
-			],
+			"file_exclude_patterns": [],
 			"folder_exclude_patterns":
 			[
-				"__pycache__",
-			]
+				"__pycache__"
+			],
 		}
-	]
+	],
+    "settings":
+    {
+        "python_interpreter": "/Users/laura/.virtualenvs/djangogirls/bin/python",
+        "anaconda_linting": false,
+        "test_command": "pytest",
+        "validate_imports": true
+    }	
 }
