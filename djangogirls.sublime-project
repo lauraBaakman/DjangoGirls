@@ -5,7 +5,7 @@
 			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
 			"name": "Anaconda Python Builder",
 			"selector": "source.python",
-			"shell_cmd": "\"python\" -u \"$file\""
+			"shell_cmd": "\"/Users/laura/.virtualenvs/djangogirls/bin/python\" -u \"$file\""
 		}
 	],
 	"folders":
@@ -18,5 +18,12 @@
 				"__pycache__"
 			],
 		}
-	]
+	],
+    "settings":
+    {
+        "python_interpreter": "/Users/laura/.virtualenvs/djangogirls/bin/python",
+        "anaconda_linting": false,
+        "test_command": "pytest",
+        "validate_imports": true
+    }	
 }
