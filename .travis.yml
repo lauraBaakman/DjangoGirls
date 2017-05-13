@@ -4,6 +4,7 @@ python:
 install:
   # - pip install .
   - pip install -r requirements.txt
+  - npm install -g jshint
 before_script:
   - if find . -name "*.py" -exec pyflakes {} \; | grep ":"; then exit 1; fi
   - if find . -name "*.py" -exec pep8 {} \; | grep ":"; then exit 1; fi
