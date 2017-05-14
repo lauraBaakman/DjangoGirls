@@ -10,8 +10,8 @@ install:
   - npm install -g csslint
   - sudo apt-get install tidy
 before_script:
-  - if find . -name "*.py" ! -path ".*manage.py" -exec pyflakes {} \; | grep ":"; then exit 1; fi
-  - if find . -name "*.py" ! -path ".*settings.py" -exec pep8 {} \; | grep ":"; then exit 1; fi
+  - if find . -name "*.py" ! -path "./manage*" ! -path "./blog/migrations/*" ! -path "./mysite/settings.py" -exec pyflakes {} \; | grep ":"; then exit 1; fi
+  - if find . -name "*.py" ! -path "./manage*" ! -path "./blog/migrations/*" ! -path "./mysite/settings.py" -exec pep8 {} \; | grep ":"; then exit 1; fi
   - if find . -name "*.js" -exec jshint {} \; | grep ":"; then exit 1; fi
   - if find . -name "*.css" -exec csslint {} \; | grep "problem"; then exit 1; fi
   - if find . -name "*.html" -exec tidy -q {} 2>&1 >/dev/null \; | grep -E 'Warning|Error'; then exit 1; fi
